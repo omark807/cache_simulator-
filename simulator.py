@@ -57,7 +57,7 @@ def generate(data):
                  "B": rndAddr2,
                  "C": rndAddr3}
 ####################################################################################
-# C CODE
+# C code to be tested by the simulator; change as needed
     # constant N in C code
     N = 16
     # constant M in C code
@@ -114,7 +114,7 @@ for (int i = 0; i < N; ++i) { // Loop 1
             data["params"]["index"+name+str(i)] = str(index)
             # generate index list
             # used to deal with two-dim arrays and one-dim arrays and separately
-            # !! MODIFY HERE IF CHANGING C CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            # ------------ MODIFY HERE IF CHANGING C CODE ---------------------------------------
             idxList = [0, index] if len(dim) == 2 else [index]
             # check whether the element at given index is in cache or not
             isInCache = array.check_element_in_cache(idxList)
@@ -142,7 +142,7 @@ for (int i = 0; i < N; ++i) { // Loop 1
         data["correct_answers"]["num_accesses" + name] = analyser.get_num_accesses(name)
         data["correct_answers"]["num_misses" + name] = analyser.get_num_misses(name)
     # get total number of accesses and misses for testing purposes
-    
+
 ####################################################################################
 # PART D
     # replace types in C code
